@@ -1,0 +1,21 @@
+/* what is this I don't even */
+body {
+  background-color: #222;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  color: lightblue;
+}
+
+.small {
+	font-size: .8em;
+}

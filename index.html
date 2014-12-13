@@ -1,9 +1,25 @@
-﻿<html>
-  <head>
-    <title>Awsome blog site</title>
-  </head>
-  <body>
-    The time is <b>{{ time }}</b>
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>magic blog</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Hello!</h1>
+    <nav><a href="/new/">magic box</a></nav>
+  </header>
 
-  </body>
+  <div id="posts">{% for post in posts %}
+    <article>
+      <h2>{{ post.heading }}</h2>
+      {% if post.is_raw %}<pre><code>{{ post.content }}</code></pre>{% else %}<blockquote>{{ post.content }}</blockquote>{% endif %}
+      <footer>by <author>{{ post.author or 'anonymous' }}</author> at <span class="date">{{ post.date }}</span></footer>
+    </article>
+  {% endfor %}</div>
+
+  <footer>
+    <p class="small">Page generated: {{ time }}</p>
+  </footer>
+</body>
 </html>
